@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Charanga El Desakato</title>
-<link rel="icon" type="image/png" href="img/favicon.png">
 
+<link rel="icon" type="image/png" href="img/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
@@ -28,7 +27,7 @@ body{
     color:#fff;
 }
 
-/* -------- ANIMACIONES -------- */
+/* ANIMACIONES */
 .fade-scroll{
     opacity:0;
     transform:translateY(30px);
@@ -39,7 +38,7 @@ body{
     transform:translateY(0);
 }
 
-/* -------- HEADER -------- */
+/* HEADER */
 header{
     min-height:70vh;
     background:
@@ -59,7 +58,7 @@ header img{
 }
 
 header h1{
-    font-size:2.2rem;
+    font-size:2.4rem;
     color:var(--rosa);
     margin-bottom:10px;
 }
@@ -67,12 +66,12 @@ header h1{
 header .top-text{
     font-size:.9rem;
     opacity:.85;
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 header a{
     margin-top:15px;
-    padding:12px 35px;
+    padding:12px 36px;
     background:var(--amarillo);
     color:#000;
     text-decoration:none;
@@ -80,30 +79,31 @@ header a{
     border-radius:40px;
 }
 
-/* -------- SECCIONES -------- */
+/* SECCIONES */
 section{
-    padding:70px 6%;
+    padding:80px 8%;
 }
 
 h2{
     text-align:center;
     color:var(--rosa);
-    font-size:2.2rem;
-    margin-bottom:40px;
+    font-size:2.3rem;
+    margin-bottom:45px;
 }
 
-/* -------- SOBRE -------- */
+/* SOBRE NOSOTROS */
 .about-container{
-    display:flex;
-    gap:30px;
+    display:grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap:45px;
     max-width:1200px;
     margin:auto;
+    align-items:center;
 }
 
 .about-img img{
     width:100%;
-    max-width:480px;
-    border-radius:20px;
+    border-radius:22px;
 }
 
 .about-text{
@@ -112,17 +112,17 @@ h2{
     text-align:justify;
 }
 
-/* -------- GALERÍA -------- */
+/* GALERÍA */
 .slider{
     position:relative;
-    max-width:700px;
+    max-width:720px;
     margin:auto;
 }
 
 .slider img{
     width:100%;
     display:none;
-    border-radius:20px;
+    border-radius:22px;
 }
 
 .slider img.active{
@@ -139,16 +139,17 @@ h2{
     font-size:2rem;
     padding:6px 14px;
     border-radius:50%;
+    cursor:pointer;
 }
 
-.prev{left:5px;}
-.next{right:5px;}
+.prev{left:8px;}
+.next{right:8px;}
 
-/* -------- VIDEOS -------- */
+/* VIDEOS */
 .videos{
     display:grid;
-    grid-template-columns:1fr;
-    gap:25px;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
 }
 
 .video-box{
@@ -163,21 +164,21 @@ h2{
     width:100%;
     height:100%;
     border:none;
-    border-radius:18px;
+    border-radius:20px;
 }
 
-/* -------- CONTACTO -------- */
+/* CONTACTO */
 .contact{
     background:#111;
     border:2px solid var(--amarillo);
-    border-radius:25px;
-    padding:40px 20px;
+    border-radius:26px;
+    padding:45px 25px;
     text-align:center;
 }
 
 .contact p{
-    margin:12px 0;
-    font-size:1.1rem;
+    margin:14px 0;
+    font-size:1.15rem;
 }
 
 .contact a{
@@ -185,20 +186,21 @@ h2{
     text-decoration:none;
 }
 
-/* -------- FOOTER -------- */
+/* FOOTER */
 footer{
     text-align:center;
-    padding:25px;
+    padding:28px;
     opacity:.6;
     font-size:.9rem;
 }
 
-/* -------- DESKTOP -------- */
-@media(min-width:900px){
-    header h1{font-size:2.8rem;}
-    section{padding:90px 10%;}
-    .about-container{flex-direction:row;}
-    .videos{grid-template-columns:repeat(2,1fr);}
+/* RESPONSIVE */
+@media(max-width:900px){
+    header h1{font-size:2rem;}
+    section{padding:70px 6%;}
+    .about-container{grid-template-columns:1fr;}
+    .about-img img{max-height:420px;object-fit:cover;}
+    .videos{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -217,7 +219,7 @@ footer{
 
 <div class="about-container">
     <div class="about-img">
-        <img src="img/charangaeldesakato1.png" alt="Charanga El Desakato">
+        <img src="img/charangaeldesakato1.png">
     </div>
 
     <div class="about-text">
@@ -225,9 +227,9 @@ footer{
 
         <p>Hoy, la charanga se presenta con una plantilla sólida de 9 músicos fijos. La fuerza del sousafón, la base rítmica de la caja y el bombo, y el brillo de sus secciones de trombones, saxos y trompetas. Esta formación les permite moverse con soltura entre géneros muy distintos, pasando de los pasodobles más tradicionales a los éxitos del pop-rock o la contundencia del techno y la música más actual.</p>
 
-        <p>En este tiempo, El Desakato ha demostrado que no tiene fronteras, ya que se han dejado ver en plazas y calles de diversas de localidades de las provincias de Toledo, Ávila, Madrid, Ciudad Real, Salamanca y Cáceres. Sea cual sea el tipo de evento, el grupo ha sabido leer perfectamente las necesidades del momento, ganándose la confianza de ayuntamientos y particulares por igual.</p>
+        <p>En este tiempo, El Desakato ha demostrado que no tiene fronteras, ya que se han dejado ver en plazas y calles de diversas localidades de las provincias de Toledo, Ávila, Madrid, Ciudad Real, Salamanca y Cáceres. Sea cual sea el tipo de evento, el grupo ha sabido leer perfectamente las necesidades del momento, ganándose la confianza de ayuntamientos y particulares por igual.</p>
 
-        <p>El próximo 2026 marcará un antes y un después en su trayectoria. La formación viajará por primera vez a las Fallas de Valencia, asumiendo el reto de llevar su música a una de las fiestas más exigentes del país. Es, hasta la fecha, la mayor aventura de la charanga; un paso que refleja la ambición y el buen momento que atraviesa este grupo de músicos talaveranos que, por encima de todo, disfrutan haciendo que la gente se lo pase bien.</p>
+        <p>El próximo 2026 marcará un antes y un después en su trayectoria. La formación viajará por primera vez a las Fallas de Valencia, asumiendo el reto de llevar su música a una de las fiestas más exigentes del país.</p>
 
         <p>Actualmente están creando una comunidad que supera ya los más de 1700 seguidores en redes sociales.</p>
     </div>
@@ -282,7 +284,6 @@ footer{
 <script>
 let index=0;
 const slides=document.querySelectorAll(".slider img");
-
 function changeSlide(n){
     slides[index].classList.remove("active");
     index=(index+n+slides.length)%slides.length;
@@ -293,9 +294,7 @@ setInterval(()=>changeSlide(1),4000);
 const faders=document.querySelectorAll(".fade-scroll");
 const observer=new IntersectionObserver(entries=>{
     entries.forEach(e=>{
-        if(e.isIntersecting){
-            e.target.classList.add("show");
-        }
+        if(e.isIntersecting){e.target.classList.add("show");}
     });
 },{threshold:.3});
 faders.forEach(f=>observer.observe(f));
