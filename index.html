@@ -3,14 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Charanga El Desakato</title>
+
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="img/favicon.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
     --negro:#0b0b0b;
-    --rosa:#f3cee0; /* rosa pastel */
+    --rosa:#f3cee0;
     --amarillo:#ffd500;
 }
 
@@ -24,34 +28,22 @@
 body{
     background:var(--negro);
     color:#fff;
-    scroll-behavior:smooth;
 }
 
-/* ---------- ANIMACIONES ---------- */
-@keyframes fadeUp{
-    from{opacity:0; transform:translateY(40px);}
-    to{opacity:1; transform:translateY(0);}
-}
-
-@keyframes zoomIn{
-    from{transform:scale(1.1); opacity:0;}
-    to{transform:scale(1); opacity:1;}
-}
-
+/* ---------------- ANIMACIONES ---------------- */
 .fade-scroll{
     opacity:0;
-    transform:translateY(40px);
-    transition:all 1s ease;
+    transform:translateY(30px);
+    transition:all .9s ease;
 }
-
 .fade-scroll.show{
     opacity:1;
     transform:translateY(0);
 }
 
-/* ---------- HEADER ---------- */
+/* ---------------- HEADER ---------------- */
 header{
-    height:85vh;
+    min-height:70vh;
     background:
         linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.85)),
         url("img/charangaeldesakato1.png") center/cover no-repeat;
@@ -61,103 +53,81 @@ header{
     align-items:center;
     text-align:center;
     padding:20px;
-    animation:zoomIn 1.2s ease;
-}
-
-header .top-text{
-    font-size:0.85rem;
-    margin-bottom:12px;
-    opacity:.85;
-    animation:fadeUp 0.8s ease;
 }
 
 header img{
-    width:120px;
+    width:110px;
     margin-bottom:15px;
-    animation:fadeUp 1s ease;
 }
 
 header h1{
-    font-size:2.2rem;
-    font-weight:800;
+    font-size:2.1rem;
     color:var(--rosa);
-    animation:fadeUp 1.2s ease;
-    margin-bottom:8px;
+    margin-bottom:10px;
+}
+
+header .top-text{
+    font-size:.85rem;
+    opacity:.85;
+    margin-bottom:10px;
 }
 
 header a{
-    margin-top:18px;
-    padding:12px 40px;
+    margin-top:15px;
+    padding:12px 35px;
     background:var(--amarillo);
     color:#000;
     text-decoration:none;
     font-weight:700;
-    border-radius:50px;
-    transition:.3s;
-    animation:fadeUp 1.6s ease;
+    border-radius:40px;
 }
 
-header a:hover{
-    background:var(--rosa);
-    color:#fff;
-    transform:scale(1.05);
-    box-shadow:0 6px 20px rgba(243,206,224,0.6);
-}
-
-/* ---------- SECCIONES ---------- */
+/* ---------------- SECCIONES ---------------- */
 section{
-    padding:90px 10%;
+    padding:70px 6%;
 }
 
-section h2{
+h2{
     text-align:center;
-    font-size:2.6rem;
-    margin-bottom:50px;
     color:var(--rosa);
+    font-size:2.1rem;
+    margin-bottom:40px;
 }
 
-/* ---------- SOBRE ---------- */
+/* ---------------- SOBRE ---------------- */
 .about-container{
     display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:40px;
+    gap:30px;
     max-width:1200px;
     margin:auto;
 }
 
 .about-img img{
     width:100%;
-    max-width:500px;
+    max-width:450px;
     border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.5);
-    animation:zoomIn 1s ease;
 }
 
 .about-text{
-    flex:1;
+    font-size:1.05rem;
+    line-height:1.7;
     text-align:justify;
-    font-size:1.15rem;
-    line-height:1.8;
 }
 
-/* ---------- GALERÍA SLIDER ---------- */
+/* ---------------- GALERÍA ---------------- */
 .slider{
     position:relative;
-    max-width:600px;  
-    margin:0 auto;
+    max-width:100%;
 }
 
 .slider img{
     width:100%;
-    border-radius:22px;
     display:none;
-    transition:opacity 1s ease;
+    border-radius:20px;
 }
 
 .slider img.active{
     display:block;
-    opacity:1;
 }
 
 .slider button{
@@ -165,95 +135,71 @@ section h2{
     top:50%;
     transform:translateY(-50%);
     background:rgba(0,0,0,.6);
-    border:none;
     color:var(--amarillo);
+    border:none;
     font-size:2rem;
-    padding:8px 16px;
-    cursor:pointer;
+    padding:6px 14px;
     border-radius:50%;
-    transition:.3s;
-    z-index:10;
 }
 
-.slider button:hover{
-    background:var(--rosa);
-    color:#fff;
-}
+.prev{left:5px;}
+.next{right:5px;}
 
-.prev{left:-15px;}
-.next{right:-15px;}
-
-/* ---------- VIDEOS ---------- */
+/* ---------------- VIDEOS ---------------- */
 .videos{
     display:grid;
-    grid-template-columns:repeat(2, 1fr); 
-    gap:35px;
+    grid-template-columns:1fr;
+    gap:25px;
 }
 
-.videos iframe{
+.video-box{
+    position:relative;
+    padding-top:56.25%;
+}
+
+.video-box iframe{
+    position:absolute;
+    top:0;
+    left:0;
     width:100%;
-    height:340px; 
-    border-radius:22px;
+    height:100%;
+    border-radius:18px;
     border:none;
-    transition:.3s;
 }
 
-.videos iframe:hover{
-    transform:scale(1.05);
-    box-shadow:0 10px 20px rgba(243,206,224,0.4);
-}
-
-/* ---------- CONTACTO ---------- */
+/* ---------------- CONTACTO ---------------- */
 .contact{
     background:#111;
     border:2px solid var(--amarillo);
-    border-radius:30px;
-    padding:60px;
+    border-radius:25px;
+    padding:40px 20px;
     text-align:center;
 }
 
 .contact p{
-    font-size:1.2rem;
-    margin:15px 0;
+    margin:12px 0;
+    font-size:1.1rem;
 }
 
 .contact a{
     color:var(--amarillo);
-    font-weight:600;
     text-decoration:none;
-    transition:.3s;
 }
 
-.contact a:hover{
-    color:var(--rosa);
-}
-
-/* ---------- FOOTER ---------- */
+/* ---------------- FOOTER ---------------- */
 footer{
     text-align:center;
-    padding:30px;
-    font-size:.9rem;
+    padding:25px;
     opacity:.6;
+    font-size:.9rem;
 }
 
-/* ---------- RESPONSIVE ---------- */
-@media(max-width:900px){
-    header h1{font-size:2rem;}
-    header img{width:110px;}
-    header .top-text{font-size:0.75rem;}
-    .about-container{
-        flex-direction:column;
-        gap:25px;
-    }
-    .about-img img{
-        max-width:100%;
-    }
-    .videos{
-        grid-template-columns:1fr;
-    }
-    .videos iframe{
-        height:260px;
-    }
+/* ---------------- DESKTOP ---------------- */
+@media(min-width:900px){
+    header h1{font-size:2.8rem;}
+    section{padding:90px 10%;}
+    .about-container{flex-direction:row;}
+    .videos{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 </head>
@@ -261,110 +207,89 @@ footer{
 <body>
 
 <header>
-    <div class="top-text">La charanga que hace vibrar tus fiestas 🎺✨</div>
+    <div class="top-text">La charanga que hace vibrar tus fiestas 🎺</div>
     <img src="img/logodesakato.png" alt="Charanga El Desakato">
     <h1>CHARANGA EL DESAKATO</h1>
     <a href="#contacto">Contrátanos</a>
 </header>
 
 <section class="fade-scroll">
-    <h2>Sobre nosotros</h2>
-    <div class="about-container">
-        <div class="about-img">
-            <img src="img/charangaeldesakato1.png" alt="Charanga El Desakato">
-        </div>
-        <div class="about-text">
-            <p>La historia de El Desakato comienza en 2023, en Talavera de la Reina. Lo que nació como una reunión de músicos con ganas de agitar las calles, pronto se convirtió en un proyecto serio que no ha dejado de crecer. Desde sus primeros ensayos, el objetivo fue claro: crear una formación con un sonido potente y un estilo capaz de encajar en cualquier tipo de fiesta.</p>
-
-            <p>Hoy, la charanga se presenta con una plantilla sólida de 9 músicos fijos. La fuerza del sousafón, la base rítmica de la caja y el bombo, y el brillo de sus secciones de trombones, saxos y trompetas. Esta formación les permite moverse con soltura entre géneros muy distintos, pasando de los pasodobles más tradicionales a los éxitos del pop-rock o la contundencia del techno y la música más actual.</p>
-
-            <p>En este tiempo, El Desakato ha demostrado que no tiene fronteras, ya que se han dejado ver en plazas y calles de diversas de localidades de las provincias de Toledo, Ávila, Madrid, Ciudad Real, Salamanca y Cáceres. Sea cual sea el tipo de evento, el grupo ha sabido leer perfectamente las necesidades del momento, ganándose la confianza de ayuntamientos y particulares por igual.</p>
-
-            <p>El próximo 2026 marcará un antes y un después en su trayectoria. La formación viajará por primera vez a las Fallas de Valencia, asumiendo el reto de llevar su música a una de las fiestas más exigentes del país. Es, hasta la fecha, la mayor aventura de la charanga; un paso que refleja la ambición y el buen momento que atraviesa este grupo de músicos talaveranos que, por encima de todo, disfrutan haciendo que la gente se lo pase bien.</p>
-
-            <p>Actualmente están creando una comunidad que supera ya los más de 1700 seguidores en redes sociales.</p>
-        </div>
+<h2>Sobre nosotros</h2>
+<div class="about-container">
+    <div class="about-img">
+        <img src="img/charangaeldesakato1.png">
     </div>
+    <div class="about-text">
+        <p>La historia de El Desakato comienza en 2023 en Talavera de la Reina...</p>
+        <p>Actualmente la charanga cuenta con 9 músicos fijos...</p>
+        <p>En 2026 viajarán por primera vez a las Fallas de Valencia.</p>
+    </div>
+</div>
 </section>
 
 <section class="fade-scroll">
-    <h2>Galería</h2>
-    <div class="slider">
-        <img src="img/galeria1.png" class="active">
-        <img src="img/galeria2.png">
-        <img src="img/galeria3.png">
-        <img src="img/galeria4.png">
-        <img src="img/galeria5.png">
-        <img src="img/galeria6.png">
-
-        <button class="prev" onclick="changeSlide(-1)">‹</button>
-        <button class="next" onclick="changeSlide(1)">›</button>
-    </div>
+<h2>Galería</h2>
+<div class="slider">
+    <img src="img/galeria1.png" class="active">
+    <img src="img/galeria2.png">
+    <img src="img/galeria3.png">
+    <img src="img/galeria4.png">
+    <img src="img/galeria5.png">
+    <img src="img/galeria6.png">
+    <button class="prev" onclick="changeSlide(-1)">‹</button>
+    <button class="next" onclick="changeSlide(1)">›</button>
+</div>
 </section>
 
 <section class="fade-scroll">
-    <h2>Vídeos</h2>
-    <div class="videos">
-        <iframe src="https://www.youtube.com/embed/0JYkDPEVFR8" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/ih1asMkRijk" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/mmvhNOhsUMo" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/RSFhBLUEz00" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/37zMmnYgdj0" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/84MWL1O6DLc" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/TCGUksZe0kg" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/MCXJ7kcKlO8" allowfullscreen></iframe>
-    </div>
+<h2>Vídeos</h2>
+<div class="videos">
+    <div class="video-box"><iframe src="https://www.youtube.com/embed/0JYkDPEVFR8" allowfullscreen></iframe></div>
+    <div class="video-box"><iframe src="https://www.youtube.com/embed/ih1asMkRijk" allowfullscreen></iframe></div>
+    <div class="video-box"><iframe src="https://www.youtube.com/embed/mmvhNOhsUMo" allowfullscreen></iframe></div>
+    <div class="video-box"><iframe src="https://www.youtube.com/embed/RSFhBLUEz00" allowfullscreen></iframe></div>
+</div>
 </section>
 
 <section id="contacto" class="fade-scroll">
-    <h2>Contacto</h2>
-    <div class="contact">
-        <p>📧 <a href="mailto:charangadesakato@gmail.com">charangadesakato@gmail.com</a></p>
-        <p>📞 625 949 029 (Adrián)</p>
-        <p>
-            📲 
-            <a href="https://www.instagram.com/charanga_eldesakato?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a> · 
-            <a href="https://www.tiktok.com/@charangaeldesakato_" target="_blank">TikTok</a> · 
-            <a href="https://www.youtube.com/@Charanga_ElDesakato" target="_blank">YouTube</a>
-        </p>
-    </div>
+<h2>Contacto</h2>
+<div class="contact">
+    <p>📧 <a href="mailto:charangadesakato@gmail.com">charangadesakato@gmail.com</a></p>
+    <p>📞 625 949 029 (Adrián)</p>
+    <p>
+        <a href="https://www.instagram.com/charanga_eldesakato" target="_blank">Instagram</a> ·
+        <a href="https://www.tiktok.com/@charangaeldesakato_" target="_blank">TikTok</a> ·
+        <a href="https://www.youtube.com/@Charanga_ElDesakato" target="_blank">YouTube</a>
+    </p>
+</div>
 </section>
 
 <footer>
-    © 2026 Charanga El Desakato
+© 2026 Charanga El Desakato
 </footer>
 
 <script>
-// ---------- GALERÍA AUTO-PLAY ----------
-let slideIndex = 0;
-const slides = document.querySelectorAll('.slider img');
-
-function showSlide(n){
-    slides.forEach(s => s.classList.remove('active'));
-    slideIndex = (n + slides.length) % slides.length;
-    slides[slideIndex].classList.add('active');
-}
+let index=0;
+const slides=document.querySelectorAll(".slider img");
 
 function changeSlide(n){
-    showSlide(slideIndex + n);
+    slides[index].classList.remove("active");
+    index=(index+n+slides.length)%slides.length;
+    slides[index].classList.add("active");
 }
 
-// Autoplay cada 4s
-setInterval(()=>{changeSlide(1)}, 4000);
+setInterval(()=>changeSlide(1),4000);
 
-// ---------- SCROLL ANIMATIONS ----------
-const faders = document.querySelectorAll('.fade-scroll');
-const appearOptions = {threshold:0.3};
-const appearOnScroll = new IntersectionObserver((entries, observer)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target);
+const faders=document.querySelectorAll(".fade-scroll");
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting){
+            e.target.classList.add("show");
         }
     });
-}, appearOptions);
+},{threshold:.3});
 
-faders.forEach(fader=>{appearOnScroll.observe(fader);});
+faders.forEach(f=>observer.observe(f));
 </script>
 
 </body>
